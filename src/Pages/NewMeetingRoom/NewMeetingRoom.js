@@ -1,5 +1,4 @@
 import styles from './NewMeetingRoom.module.css';
-
 import { useState } from 'react';
 
 const API = process.env.REACT_APP_API_URL;
@@ -53,7 +52,7 @@ function NewMeetingRoom({ onCreateMeetingRoom }) {
 
   return (
     <div>
-      <h2>Create a New Meeting Room</h2>
+      <h2 className={styles.newMeetingRoomTitle}>Create a New Meeting Room</h2>
       <form>
         <div>
           <label>Room Name:</label>
