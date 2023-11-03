@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom"
 import styles from "./MeetingRoomCard.module.css"
 
-function MeetingRoomCard( {room, setCurrentMeetingRoom, currentBooking}) {
-    
+function MeetingRoomCard( {room, setCurrentMeetingRoom }) {
   return (
         <Link to={`/meeting-rooms/${room.room_id}`} onClick={() => setCurrentMeetingRoom(room)}>
             <div key={room.room_id} className={styles.meetingRoomList__single}>
@@ -11,7 +10,6 @@ function MeetingRoomCard( {room, setCurrentMeetingRoom, currentBooking}) {
             <div>🏬 Floor: {room.floor}</div>
             </div>
         </Link>
-
   )
 }
 

@@ -16,7 +16,8 @@ function SearchAvailableRoomsForm({ onSearch }) {
       capacity: capacity || null, 
     };
 
-    onSearch(searchCriteria);
+    // onSearch(searchCriteria);
+    alert("This Search Form is undergoing maintenance.")
   }
 
   return (

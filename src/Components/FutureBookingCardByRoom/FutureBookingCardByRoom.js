@@ -1,20 +1,21 @@
-import React from 'react'
+import styles from "./FutureBookingCard.module.css"
 
-function FutureBookingCardByRoom( { futureBookings, setCurrentBooking }) {
-
+function FutureBookingCardByRoom({ futureBookings, setCurrentBooking }) {
   return (
-    <div>
-        <ul>
-            {futureBookings.map((booking) => (
-            <div key={booking.id} onClick={() => setCurrentBooking(booking)}>
-                attendee? -  {booking.meeting_name}
-                <div>Start: {booking.start_date} </div>
-                <div>End: {booking.end_date}</div>
-            </div>
-            ))}
-            </ul>
+    <div className={styles.futureBookingCard}>
+      <ul>
+        {futureBookings.map((booking) => (
+          /* onClick={() => setCurrentBooking(booking)} */
+          <div key={booking.id} >
+            {booking.meeting_name}
+            <div>Start: {booking.start_date}</div>
+            <div>End: {booking.end_date}</div>
+          </div>
+        ))}
+      </ul>
     </div>
-  )
+  );
 }
+
 
 export default FutureBookingCardByRoom;

@@ -1,0 +1,32 @@
+/* FutureBookingCardByRoom.module.css */
+
+/* Container for the component */
+.futureBookingCard {
+    margin: 80px 0 80px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: larger;
+    /* background-color: #f7f7f7; */
+  }
+  
+  /* Individual booking item styles */
+  .bookingItem {
+    /* border: 1px solid #ddd;
+    border-radius: 6px; */
+    padding: 10px;
+    font-size: larger;
+    margin: 10px 0;
+    /* cursor: pointer;
+    transition: background-color 0.3s; */
+  }
+  
+  .bookingItem:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Booking details styles */
+  .bookingItem p {
+    margin: 5px 0;
+  }
+  

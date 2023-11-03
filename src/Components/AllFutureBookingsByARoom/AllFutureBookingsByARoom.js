@@ -4,8 +4,8 @@ import styles from "./AllFutureBookings.module.css"
 
 const API = process.env.REACT_APP_API_URL;
 
-function AllFutureBookingsByARoom( { roomId, setCurrentBooking }) {
-    const [futureBookings, setFutureBookings] = useState([]);
+function AllFutureBookingsByARoom( { futureBookings, setFutureBookings, roomId, setCurrentBooking }) {
+    // const [futureBookings, setFutureBookings] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -30,7 +30,7 @@ function AllFutureBookingsByARoom( { roomId, setCurrentBooking }) {
       }, [roomId]);
     
       return (
-        <div>
+        <div className={styles.allFutureBookings}>
           <h2>All Future Bookings</h2>
           {loading ? (
             <p>Loading...</p>

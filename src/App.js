@@ -14,6 +14,7 @@ function App() {
   const [meetingRooms, setMeetingRooms] = useState([]);
   const [loading, setLoading] = useState(true);
   const [ currentMeetingRoom, setCurrentMeetingRoom ] = useState({});
+  const [ currentBooking, setCurrentBooking ] = useState({});
   const [ currentBookingDisplaying, setCurrentBookingDisplaying ] = useState({});
 
   useEffect(() => {
@@ -49,7 +50,9 @@ const handleCreateMeetingRoom = (newMeetingRoom) => {
                                         />} />
         <Route path="/bookings" element={<Bookings setCurrentBookingDisplaying = { setCurrentBookingDisplaying }/>} />
         <Route path="/meeting-rooms/:id" element={<SingMeetingRoom currentMeetingRoom = { currentMeetingRoom } />} />
-        <Route path="/bookings/:id" element={<SingleBooking currentBookingDisplaying = { currentBookingDisplaying }/>} />
+        <Route path="/bookings/:id" element={<SingleBooking 
+                                              currentBookingDisplaying = { currentBookingDisplaying }
+                                              setCurrentBooking = { setCurrentBooking }/>} />
         <Route path="/meeting-rooms/new" element={<NewMeetingRoom onCreateMeetingRoom = { handleCreateMeetingRoom }/>} />
       </Routes>
     </Router>
