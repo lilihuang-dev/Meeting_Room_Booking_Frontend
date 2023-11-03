@@ -1,0 +1,33 @@
+.meetingRoomsList {
+    margin: 10px;
+    /* height: inherit;
+    height: calc(100% - 41px);
+    overflow-y: scroll; */
+}
+
+/* .StudentList__controls {
+    display: grid;
+    grid-template-columns: 1fr 100px 100px;
+    align-items: flex-end;
+    gap: 16px;
+    width: 95%;
+} */
+
+
+.meetingRoomList__single {
+    margin: 10px;
+    padding: 10px;
+    border: 2px black solid;
+    border-radius: 5px;
+}
+
+/* .meetingRoomsList__content {
+    height: calc(100% - 41px);
+    overflow-y: scroll;
+} */
+
+.meetingRoomsList_content__center {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
