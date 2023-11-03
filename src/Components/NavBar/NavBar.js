@@ -1,4 +1,4 @@
-import syles from "./NavBar.module.css"
+import styles from "./NavBar.module.css"
 
 import { Link } from 'react-router-dom';
 
@@ -6,15 +6,21 @@ function NavBar() {
 
   return (
     <nav>
-      <ul>
-        <li>
-          <Link to="/">Meeting Rooms</Link>
+      <ul className={styles.nav}>
+        <li className = {styles.nav_item}>
+          <Link to="/" className = {styles.nav_link}>
+            Meeting Rooms
+          </Link>
         </li>
-        <li>
-          <Link to="/bookings">Bookings</Link>
+        <li className = {styles.nav_item}>
+          <Link to="/bookings" className = {styles.nav_link}>
+            Bookings
+          </Link>
         </li>
-        <li>
-          <Link to="/meeting-rooms/new">New Meeting Room</Link>
+        <li className = {styles.nav_item}>
+          <Link to="/meeting-rooms/new" className = {styles.nav_link}>
+            New Meeting Room
+          </Link>
         </li>
       </ul>
     </nav>

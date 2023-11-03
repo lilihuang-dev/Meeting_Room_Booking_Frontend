@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import styles from "./SearchAvailableRoomsForm.module.css"
 
 function SearchAvailableRoomsForm({ onSearch }) {
   const [startDate, setStartDate] = useState('');
@@ -15,12 +16,11 @@ function SearchAvailableRoomsForm({ onSearch }) {
       capacity: capacity || null, 
     };
 
-    // Call the onSearch callback with the search criteria
     onSearch(searchCriteria);
   }
 
   return (
-    <div>
+    <div className={styles.searchForm}>
       <h1>Search for Available Meeting Rooms</h1>
       <form>
         <div>

@@ -6,6 +6,7 @@ import Bookings from './Pages/Bookings/Bookings';
 import NewMeetingRoom from './Pages/NewMeetingRoom/NewMeetingRoom';
 import SingMeetingRoom from './Pages/SingMeetingRoom/SingMeetingRoom';
 import SingleBooking from './Pages/SingleBooking/SingleBooking';
+import styles from "./App.module.css";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -38,7 +39,8 @@ const handleCreateMeetingRoom = (newMeetingRoom) => {
 }
 
   return (
-    <Router>
+    <div className={styles.App}>
+      <Router>
       <NavBar />
       <Routes>
         <Route exact path="/"  element={<Home 
@@ -51,6 +53,7 @@ const handleCreateMeetingRoom = (newMeetingRoom) => {
         <Route path="/meeting-rooms/new" element={<NewMeetingRoom onCreateMeetingRoom = { handleCreateMeetingRoom }/>} />
       </Routes>
     </Router>
+    </div>
   );
 }
 

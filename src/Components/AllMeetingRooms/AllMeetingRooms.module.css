@@ -1,33 +1,25 @@
 .meetingRoomsList {
-    margin: 10px;
-    /* height: inherit;
-    height: calc(100% - 41px);
-    overflow-y: scroll; */
-}
+    background-color: #f5f5f5;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 20px; 
+    max-height: 300px; 
+    overflow-y: auto;
+  }
+  
+  /* Heading styles */
+  .meetingRoomsList h1 {
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .meetingRoomsList a {
+    text-decoration: none; 
+    color: inherit;
+  }
+  
 
-/* .StudentList__controls {
-    display: grid;
-    grid-template-columns: 1fr 100px 100px;
-    align-items: flex-end;
-    gap: 16px;
-    width: 95%;
-} */
-
-
-.meetingRoomList__single {
-    margin: 10px;
-    padding: 10px;
-    border: 2px black solid;
-    border-radius: 5px;
-}
-
-/* .meetingRoomsList__content {
-    height: calc(100% - 41px);
-    overflow-y: scroll;
-} */
-
-.meetingRoomsList_content__center {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-}
+  .meetingRoomsList a:hover {
+    color: #0056b3;
+  }

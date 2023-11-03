@@ -2,24 +2,16 @@ import styles from './AllMeetingRooms.module.css';
 import MeetingRoomCard from '../MeetingRoomCard/MeetingRoomCard';
 
 function AllMeetingRooms({ meetingRooms, setCurrentMeetingRoom, setCurrentBooking }) {
-
-  
-
-  // const firstThreeRooms = renderRoomsList.slice(0, 3);
-
   return (
     <div className={styles.meetingRoomsList}>
       <h1>ALL Meeting Rooms List</h1>
-     
       {meetingRooms.map((room) => {
-        
        return  <MeetingRoomCard 
                   key = { room.room_id } 
                   room = { room } 
                   setCurrentBooking = { setCurrentBooking }
-                  setCurrentMeetingRoom={ setCurrentMeetingRoom }
+                  setCurrentMeetingRoom = { setCurrentMeetingRoom }
                 />
-         
       })}
     </div>
   )

@@ -1,0 +1,39 @@
+/* .nav {
+    justify-content: space-around;
+} */
+
+/* Assuming you have a CSS module named 'styles' */
+
+/* Nav styles */
+nav {
+    background-color: white; 
+    padding: 10px;
+  }
+  
+  /* Nav list styles */
+.nav {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+.nav_item {
+    margin: 0;
+    padding: 0;
+  }
+
+  
+.nav_link {
+    text-decoration: none;
+    color: black; 
+    font-size: 26px;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s;
+  }
+  
+.nav_link:hover {
+    color: #55b5e6;
+  }
+  
