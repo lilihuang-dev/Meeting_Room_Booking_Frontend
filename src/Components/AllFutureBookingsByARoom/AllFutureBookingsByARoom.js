@@ -12,13 +12,12 @@ function AllFutureBookingsByARoom( { futureBookings, setFutureBookings, roomId, 
         const fetchFutureBookings = async () => {
           try {
             const response = await fetch(`${API}/meeting-rooms/${roomId}/bookings`);
+            console.log(response)
             if (response.ok) {
               const data = await response.json();
-              console.log(data)
+              console.log("this room's future bookings",data)
               setFutureBookings(data.result);
-            } else {
-              console.error('Failed to fetch future bookings');
-            }
+            } 
             setLoading(false);
           } catch (error) {
             console.error('Error fetching future bookings:', error);
@@ -35,7 +34,7 @@ function AllFutureBookingsByARoom( { futureBookings, setFutureBookings, roomId, 
           {loading ? (
             <p>Loading...</p>
           ) : (
-            futureBookings.length > 0 ? 
+            futureBookings?.length > 0 ? 
             <FutureBookingCardByRoom futureBookings = { futureBookings } setCurrentBooking = { setCurrentBooking }/> :
             'No Future Bookings for this meeting room.'
           )}

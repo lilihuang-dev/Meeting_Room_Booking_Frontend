@@ -5,7 +5,6 @@ function FutureBookingCardByRoom({ futureBookings, setCurrentBooking }) {
     <div className={styles.futureBookingCard}>
       <ul>
         {futureBookings.map((booking) => (
-          /* onClick={() => setCurrentBooking(booking)} */
           <div key={booking.id} >
             {booking.meeting_name}
             <div>Start: {booking.start_date}</div>

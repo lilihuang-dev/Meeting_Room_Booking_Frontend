@@ -9,7 +9,7 @@ const BookingForm = ({ roomId, setFutureBookings }) => {
     meeting_name: '',
     start_date: '',
     end_date: '',
-    attendees: '',
+    attendee: '',
   });
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -37,40 +37,54 @@ const BookingForm = ({ roomId, setFutureBookings }) => {
     });
   };
 
+
+    const fetchFutureBookings = async () => {
+      try {
+        const response = await fetch(`${API}/meeting-rooms/${roomId}/bookings`);
+        if (response.ok) {
+          const data = await response.json();
+          setFutureBookings(data.result);
+        } else {
+          console.error('Failed to fetch future bookings');
+        }
+      } catch (error) {
+        console.error('Error fetching future bookings:', error);
+      }
+    };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Booking Form is currently being maintained.")
-    // try {
-    //   // post end point broken
-    //   if (isBookingDurationValid(booking.start_date, booking.end_date)) {
-    //     const response = await fetch(`${API}/bookings`, {
-    //       method: 'POST',
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       },
-    //       body: JSON.stringify({
-    //         room_id: roomId,
-    //         ...booking,
-    //       }),
-    //     });
-    //     const data = await response.json();
-    //     if (response.status === 201) {
-    //       setFutureBookings(data.result)
-    //       setSuccessMessage('Booking created successfully!');
-    //       setErrorMessage('');
-    //     } else {
-    //       setSuccessMessage('');
-    //       setErrorMessage(data.error);
-    //     }
-    //   } else {
-    //     setErrorMessage('Meeting duration should be between 15 minutes and 10 hours.');
-    //   }
-    // } catch (error) {
-    //   console.error('Error creating booking:', error);
-    //   setSuccessMessage('');
-    //   setErrorMessage('Server error.');
-    // }
+    try {
+      if (isBookingDurationValid(booking.start_date, booking.end_date)) {
+        const response = await fetch(`${API}/bookings`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            room_id: roomId,
+            ...booking,
+          }),
+        });
+        const data = await response.json();
+        if (response.status === 201) {
+          setSuccessMessage('Booking created successfully!');
+          setErrorMessage('');
+          fetchFutureBookings(); 
+        } else {
+          setSuccessMessage('');
+          setErrorMessage(data.error);
+        }
+      } else {
+        setErrorMessage('Meeting duration should be between 15 minutes and 10 hours.');
+      }
+    } catch (error) {
+      console.error('Error creating booking:', error);
+      setSuccessMessage('');
+      setErrorMessage('Server error.');
+    }
   };
+
 
   return (
     <div className={styles.bookingForm}>
@@ -116,14 +130,14 @@ const BookingForm = ({ roomId, setFutureBookings }) => {
           className={styles.bookingFormInput}
         />
         <br />
-        <label htmlFor="attendees" className={styles.bookingFormLabel}>
+        <label htmlFor="attendee" className={styles.bookingFormLabel}>
           Attendees:
         </label>
         <input
           type="text"
-          id="attendees"
-          name="attendees"
-          value={booking.attendees}
+          id="attendee"
+          name="attendee"
+          value={booking.attendee}
           onChange={handleInputChange}
           className={styles.bookingFormInput}
         />

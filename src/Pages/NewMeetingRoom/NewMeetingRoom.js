@@ -1,5 +1,5 @@
 import styles from './NewMeetingRoom.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -9,6 +9,21 @@ function NewMeetingRoom({ onCreateMeetingRoom }) {
   const [floor, setFloor] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+
+  const clearMessages = () => {
+    setSuccessMessage('');
+    setErrorMessage('');
+  };
+
+  useEffect(() => {
+    if (successMessage || errorMessage) {
+      const timeoutId = setTimeout(clearMessages, 5000);
+
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    }
+  }, [successMessage, errorMessage]);
 
   const handleCreateMeetingRoom = () => {
     if (!roomName || !capacity || !floor) {
