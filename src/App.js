@@ -16,7 +16,7 @@ function App() {
   const [ currentMeetingRoom, setCurrentMeetingRoom ] = useState({});
   const [ currentBooking, setCurrentBooking ] = useState({});
   const [ currentBookingDisplaying, setCurrentBookingDisplaying ] = useState({});
-
+// console.log("App: ", currentMeetingRoom)
   useEffect(() => {
 
   fetch(`${API}/meeting-rooms`)
@@ -48,7 +48,9 @@ const handleCreateMeetingRoom = (newMeetingRoom) => {
                                           meetingRooms = { meetingRooms } 
                                           setCurrentMeetingRoom = { setCurrentMeetingRoom }
                                         />} />
-        <Route path="/bookings" element={<Bookings setCurrentBookingDisplaying = { setCurrentBookingDisplaying }/>} />
+        <Route path="/bookings" element={<Bookings 
+                                            currentMeetingRoom = { currentMeetingRoom }
+                                            setCurrentBookingDisplaying = { setCurrentBookingDisplaying }/>} />
         <Route path="/meeting-rooms/:id" element={<SingMeetingRoom currentMeetingRoom = { currentMeetingRoom } />} />
         <Route path="/bookings/:id" element={<SingleBooking 
                                               currentBookingDisplaying = { currentBookingDisplaying }

@@ -37,9 +37,12 @@ const SingleBooking = ({ currentBookingDisplaying }) => {
   return (
     <div>
       <h2>Booking Details</h2>
-      <p>Meeting Name: {currentBookingDisplaying.meeting_name}</p>
-      <p>Start Date: {currentBookingDisplaying.start_date}</p>
-      <p>End Date: {currentBookingDisplaying.end_date}</p>
+      <p><strong>Meeting Name:</strong> 
+        {currentBookingDisplaying.meeting_name}
+      </p>
+      <p>⏳ Start Date: {currentBookingDisplaying.start_date}</p>
+      <p>⏳ End Date: {currentBookingDisplaying.end_date}</p>
+      <p>🏬  Floor: {currentBookingDisplaying.booking_room_floor}</p>
 
       <button onClick={handleCancelBooking}>Cancel Booking</button>
 
@@ -48,6 +51,8 @@ const SingleBooking = ({ currentBookingDisplaying }) => {
     </div>
   );
 };
+
+
 
 export default SingleBooking;
 

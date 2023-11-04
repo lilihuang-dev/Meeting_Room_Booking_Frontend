@@ -1,13 +1,16 @@
 import { useState } from 'react';
 import styles from "./SearchAvailableRoomsForm.module.css"
 
+const API = process.env.REACT_APP_API_URL;
+
 function SearchAvailableRoomsForm({ onSearch }) {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [floor, setFloor] = useState('');
   const [capacity, setCapacity] = useState('');
+  const [error, setError] = useState(null);
 
-  const handleSearch = () => {
+  const handleSearch = async() => {
 
     const searchCriteria = {
       startDate,
@@ -15,9 +18,30 @@ function SearchAvailableRoomsForm({ onSearch }) {
       floor: floor || null, 
       capacity: capacity || null, 
     };
+    // date-time backend format: (TIMESTAMP)
+    // 2024-03-29T13:30:00.000Z
+    // 2024-03-29T14:30:00.000Z
 
-    // onSearch(searchCriteria);
-    alert("This Search Form is undergoing maintenance.")
+    console.log("frontend start date: ", startDate)
+    // 2023-11-11T17:10
+    console.log("frontend end date: ", endDate)
+    // 2023-11-11T17:10
+
+    try {
+      const response = await fetch(`${API}/meeting-rooms/?start_date=${startDate}&end_date=${endDate}&floor=${floor}&capacity=${capacity}`);
+      if (response.ok) {
+        const data = await response.json();
+        onSearch(data.result);
+        setError(null);
+      } else {
+        const errorMessage = response.statusText
+        setError(errorMessage);
+        console.error(errorMessage);
+      }
+    } catch (error) {
+      console.error('Network or other error:', error.message);
+      setError(error.message);
+    }
   }
 
   return (

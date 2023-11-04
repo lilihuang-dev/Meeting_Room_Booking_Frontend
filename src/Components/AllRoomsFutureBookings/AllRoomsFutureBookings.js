@@ -4,10 +4,10 @@ import FutureBookingCardOnBookings from '../FutureBookingCardOnBookings/FutureBo
 
 const API = process.env.REACT_APP_API_URL;
 
-const AllRoomsFutureBookings = ({ setCurrentBookingDisplaying }) => {
+const AllRoomsFutureBookings = ({ currentMeetingRoom, setCurrentBookingDisplaying }) => {
   const [bookings, setBookings] = useState([]);
 
-
+console.log("AllRoomsFutureBookings : ", currentMeetingRoom)
   useEffect(() => {
     fetch(`${API}/bookings`)
     .then((response) => {
@@ -31,6 +31,7 @@ const AllRoomsFutureBookings = ({ setCurrentBookingDisplaying }) => {
     <div>
       <h2>Future Bookings</h2>
       <FutureBookingCardOnBookings 
+        currentMeetingRoom = { currentMeetingRoom }
         bookings = { bookings }
         setCurrentBookingDisplaying = { setCurrentBookingDisplaying }
        />

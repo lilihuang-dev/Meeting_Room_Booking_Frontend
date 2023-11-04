@@ -1,3 +1,4 @@
+import convertTimeformat from '../../helpers/convertDateToDisplay';
 import styles from "./FutureBookingCard.module.css"
 
 function FutureBookingCardByRoom({ futureBookings, setCurrentBooking }) {
@@ -6,9 +7,10 @@ function FutureBookingCardByRoom({ futureBookings, setCurrentBooking }) {
       <ul>
         {futureBookings.map((booking) => (
           <div key={booking.id} >
-            {booking.meeting_name}
-            <div>Start: {booking.start_date}</div>
-            <div>End: {booking.end_date}</div>
+            <h3>{booking.meeting_name}</h3>
+            <div>Start: {convertTimeformat(booking.start_date)}</div>
+            <div>End: {convertTimeformat(booking.end_date)}</div>
+            <hr />
           </div>
         ))}
       </ul>
