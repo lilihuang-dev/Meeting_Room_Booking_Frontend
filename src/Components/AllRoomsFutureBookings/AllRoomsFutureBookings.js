@@ -7,6 +7,10 @@ const API = process.env.REACT_APP_API_URL;
 const AllRoomsFutureBookings = ({ currentMeetingRoom, setCurrentBookingDisplaying }) => {
   const [bookings, setBookings] = useState([]);
 
+  const handleOneBookingDetail = (booking) => {
+    setCurrentBookingDisplaying(booking)
+  }
+
   useEffect(() => {
     fetch(`${API}/bookings`)
     .then((response) => {
@@ -28,12 +32,12 @@ const AllRoomsFutureBookings = ({ currentMeetingRoom, setCurrentBookingDisplayin
 
   return (
     <div>
-      {/* <h2>Future Bookings</h2> */}
       <div className={styles.scrollContainer}>
         <FutureBookingCardOnBookings 
           currentMeetingRoom = { currentMeetingRoom }
           bookings = { bookings }
           setCurrentBookingDisplaying = { setCurrentBookingDisplaying }
+          handleClick = { handleOneBookingDetail }
         />
       </div>
     </div>

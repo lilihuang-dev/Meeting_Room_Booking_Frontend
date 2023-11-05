@@ -1,17 +1,15 @@
 import { Link } from "react-router-dom"
-import { useState, useEffect } from "react";
 import convertTimeformat from '../../helpers/convertDateToDisplay';
 import styles from "./FutureBookingCardOnBookings.module.css"
 
 const API = process.env.REACT_APP_API_URL;
 
-
-function FutureBookingCardOnBookings({ bookings, setCurrentBookingDisplaying }) {
+function FutureBookingCardOnBookings({ bookings, handleClick }) {
   return (
     <ul className={styles.cardList}>
       {bookings.map((booking) => (
         <li key={booking.booking_id} className={styles.card}>
-          <Link to={`/bookings/${booking.booking_id}`} className={styles.link}>
+          <Link to={`/bookings/${booking.booking_id}`} className={styles.link} onClick = {handleClick(booking)}>
             <p className={styles.meetingName}>
               <strong>{booking.meeting_name}</strong>
             </p>

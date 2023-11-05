@@ -1,7 +1,6 @@
-
-
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import convertTimeformat from '../../helpers/convertDateToDisplay';
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -38,8 +37,8 @@ const SingleBooking = ({ currentBookingDisplaying }) => {
       <p><strong>Meeting Name:</strong> 
         {currentBookingDisplaying.meeting_name}
       </p>
-      <p>⏳ Start Date: {currentBookingDisplaying.start_date}</p>
-      <p>⏳ End Date: {currentBookingDisplaying.end_date}</p>
+      <p>⏳ Start Date: {convertTimeformat(currentBookingDisplaying.start_date)}</p>
+      <p>⏳ End Date: {convertTimeformat(currentBookingDisplaying.end_date)}</p>
       <p>🏬  Floor: {currentBookingDisplaying.booking_room_floor}</p>
 
       <button onClick={handleCancelBooking}>Cancel Booking</button>
