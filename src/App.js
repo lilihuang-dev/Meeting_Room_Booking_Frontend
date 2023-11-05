@@ -16,7 +16,7 @@ function App() {
   const [ currentMeetingRoom, setCurrentMeetingRoom ] = useState({});
   const [ currentBooking, setCurrentBooking ] = useState({});
   const [ currentBookingDisplaying, setCurrentBookingDisplaying ] = useState({});
-// console.log("App: ", currentMeetingRoom)
+
   useEffect(() => {
 
   fetch(`${API}/meeting-rooms`)

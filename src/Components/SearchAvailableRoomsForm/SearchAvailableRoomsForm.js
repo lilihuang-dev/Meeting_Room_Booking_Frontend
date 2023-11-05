@@ -18,14 +18,6 @@ function SearchAvailableRoomsForm({ onSearch }) {
       floor: floor || null, 
       capacity: capacity || null, 
     };
-    // date-time backend format: (TIMESTAMP)
-    // 2024-03-29T13:30:00.000Z
-    // 2024-03-29T14:30:00.000Z
-
-    console.log("frontend start date: ", startDate)
-    // 2023-11-11T17:10
-    console.log("frontend end date: ", endDate)
-    // 2023-11-11T17:10
 
     try {
       const response = await fetch(`${API}/meeting-rooms/?start_date=${startDate}&end_date=${endDate}&floor=${floor}&capacity=${capacity}`);

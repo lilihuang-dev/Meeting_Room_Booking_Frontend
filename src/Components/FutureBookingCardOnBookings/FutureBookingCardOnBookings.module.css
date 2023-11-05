@@ -1,0 +1,41 @@
+.cardList {
+    list-style: none; 
+    padding: 0;
+    text-align: center;
+  }
+
+.card {
+    padding: 10px;
+    margin: 10px;
+}
+
+.link {
+    text-decoration: none;
+    color: #0074d9;
+    font-weight: bold;
+}
+
+.meetingName {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.room {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+time {
+    font-style: italic;
+    color: #333;
+}
+
+.floor {
+    font-weight: bold;
+}

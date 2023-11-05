@@ -1,0 +1,8 @@
+.scrollContainer {
+    margin-top: 80px;
+    height: 400px; 
+    overflow-y: auto; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}

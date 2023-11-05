@@ -6,7 +6,6 @@ import { Link, useNavigate } from 'react-router-dom';
 const API = process.env.REACT_APP_API_URL;
 
 const SingleBooking = ({ currentBookingDisplaying }) => {
-//   const [booking, setBooking] = useState({});
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
@@ -15,7 +14,6 @@ const SingleBooking = ({ currentBookingDisplaying }) => {
     const confirmCancel = window.confirm('Are you sure you want to cancel this booking?');
 
     if (confirmCancel) {
-      // Send a request to cancel the booking
       fetch(`${API}/bookings/${currentBookingDisplaying.booking_id}`, {
         method: 'DELETE',
       })
@@ -52,26 +50,5 @@ const SingleBooking = ({ currentBookingDisplaying }) => {
   );
 };
 
-
-
 export default SingleBooking;
 
-
-//   useEffect(() => {
-//     // Fetch booking details based on the ID from the URL
-//     fetch(`${API}/bookings/${currentBookingDisplaying.booking_id}`)
-//       .then((response) => {
-//         if (response.ok) {
-//           return response.json();
-//         } else {
-//           throw new Error('Failed to fetch booking details');
-//         }
-//       })
-//       .then((data) => {
-//         setBooking(data.result);
-//       })
-//       .catch((error) => {
-//         console.error('Error fetching booking details:', error);
-//         setErrorMessage('Failed to fetch booking details.');
-//       });
-//   }, [booking.booking_id]);

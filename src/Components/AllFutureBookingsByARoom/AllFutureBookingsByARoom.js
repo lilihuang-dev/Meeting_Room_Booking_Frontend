@@ -5,17 +5,14 @@ import styles from "./AllFutureBookings.module.css"
 const API = process.env.REACT_APP_API_URL;
 
 function AllFutureBookingsByARoom( { futureBookings, setFutureBookings, roomId, setCurrentBooking }) {
-    // const [futureBookings, setFutureBookings] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchFutureBookings = async () => {
           try {
             const response = await fetch(`${API}/meeting-rooms/${roomId}/bookings`);
-            console.log(response)
             if (response.ok) {
               const data = await response.json();
-              console.log("this room's future bookings",data)
               setFutureBookings(data.result);
             } 
             setLoading(false);

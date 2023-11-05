@@ -1,26 +1,17 @@
-/* .singleMeetingRoom {
-    border: 1px solid #ccc;
-    padding: 50px; 
-    margin-bottom: 20px 20px; 
-    background-color: #f9f9f9; 
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); 
-  }  */
-  
-  /* X  */
-  .roomInfoContainer {
-    margin: 80px;
-    display: grid; 
+.roomInfoContainer {
+    margin: 80px 15px 10px 15px;
+    display: flex; 
     justify-content: space-between; 
-    margin-bottom: 10px; 
-  }
+    font-size: large;
+    font-weight: bold;
+}
   
-  .singleMeetingRoom a {
-    text-decoration: none; 
-    color: #007bff; 
-    transition: color 0.3s; 
-  }
-  
-  .singleMeetingRoom a:hover {
-    color: #0056b3; 
-  }
-  
+.singleMeetingRoom a {
+  text-decoration: none; 
+  color: #007bff; 
+  transition: color 0.3s; 
+}
+
+.singleMeetingRoom a:hover {
+  color: #0056b3; 
+}

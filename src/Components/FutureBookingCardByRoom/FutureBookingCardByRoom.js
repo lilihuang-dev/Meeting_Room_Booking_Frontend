@@ -8,8 +8,8 @@ function FutureBookingCardByRoom({ futureBookings, setCurrentBooking }) {
         {futureBookings.map((booking) => (
           <div key={booking.id} >
             <h3>{booking.meeting_name}</h3>
-            <div>Start: {convertTimeformat(booking.start_date)}</div>
-            <div>End: {convertTimeformat(booking.end_date)}</div>
+            <div>⏳ Start: {convertTimeformat(booking.start_date)}</div>
+            <div>⌛ End: {convertTimeformat(booking.end_date)}</div>
             <hr />
           </div>
         ))}

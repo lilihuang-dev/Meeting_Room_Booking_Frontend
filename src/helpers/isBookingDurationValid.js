@@ -13,4 +13,4 @@ const isBookingDurationValid = (start_date, end_date) => {
   };
   
   
-module.exports = { isBookingDurationValid };
+export default isBookingDurationValid;

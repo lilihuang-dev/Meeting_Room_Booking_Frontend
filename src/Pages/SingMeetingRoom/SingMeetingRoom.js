@@ -10,8 +10,8 @@ function SingleMeetingRoom({ currentMeetingRoom, setCurrentBooking }) {
     <div className={styles.singleMeetingRoom}>
       <div className={styles.roomInfoContainer}>
         <div>{currentMeetingRoom.room_name}</div>
-        <div>{currentMeetingRoom.capacity}</div>
-        <div>{currentMeetingRoom.floor}</div>
+        <div>👥  Capacity: {currentMeetingRoom.capacity}</div>
+        <div>🏬  Floor: {currentMeetingRoom.floor}</div>
       </div>
       <hr />
       <BookingForm roomId={room_id} setFutureBookings = {setFutureBookings }/>

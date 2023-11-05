@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { isBookingDurationValid } from "./isBookingDurationValid";
+import isBookingDurationValid from '../../helpers/isBookingDurationValid';
 import styles from "./BookingForm.module.css"
 
 const API = process.env.REACT_APP_API_URL;

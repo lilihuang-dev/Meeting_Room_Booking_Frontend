@@ -2,7 +2,7 @@ import AllRoomsFutureBookings from '../../Components/AllRoomsFutureBookings/AllR
 import styles from './Bookings.module.css';
 
 function Bookings({ currentMeetingRoom, setCurrentBookingDisplaying }) {
-  console.log("Bookings: ",currentMeetingRoom)
+
   return (
     <div>
     <AllRoomsFutureBookings 
