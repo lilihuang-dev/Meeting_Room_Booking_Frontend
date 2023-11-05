@@ -1,70 +1,114 @@
-# Getting Started with Create React App
+# Meeting-rooms-booking App Deployment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Deployed Backend
 
-## Available Scripts
+- **[Deployed Backend](https://meeingroombookingbackend.adaptable.app/)**: This is the link to the deployed backend of the Meeting-rooms-booking App.
 
-In the project directory, you can run:
+## Deployed Frontend
 
-### `npm start`
+- **[Deployed Frontend](https://meeting-rooms-booking.netlify.app/)**: This is the link to the deployed frontend of the Meeting-rooms-booking App.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Local Development Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+If you want to run the project locally, follow these steps:
 
-### `npm run build`
+1. **Backend Setup:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   - Clone the Backend Repository:
+     ```
+     git clone git@github.com:lilihuang-dev/Meeting_Room_Booking_Backend.git
+     ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   - Navigate to the Backend Directory:
+     ```
+     cd backend
+     ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   - Install Backend Dependencies:
+     ```
+     npm install
+     npm install pg-promise dotenv express
+     ```
 
-### `npm run eject`
+   - Run these commands to create the database, tables, and insert data:
+     ```
+     npm run db_init
+     npm run db_seed
+     ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   - Create a `.env` file with the following content:
+     ```
+     PORT=8888
+     PG_HOST=localhost
+     PG_PORT=5432
+     PG_DATABASE=meeting_room_booking
+     PG_USER=postgres
+     ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   - Running the Backend:
+     ```
+     npm start
+     ```
+     or
+     ```
+     npm run dev
+     ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Frontend Setup:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   - Clone the Frontend Repository:
+     ```
+     git clone git@github.com:lilihuang-dev/Meeting_Room_Booking_Frontend.git
+     ```
 
-## Learn More
+   - Navigate to the Frontend Directory:
+     ```
+     cd room_booking_frontend
+     ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   - Create a `.env` file with the following content:
+     ```
+     REACT_APP_API_URL=http://localhost:8888
+     ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   - Install Frontend Dependencies:
+     ```
+     npm install
+     ```
 
-### Code Splitting
+   - Start the React App:
+     ```
+     npm start
+     ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This will set up both the backend and frontend for local development.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
